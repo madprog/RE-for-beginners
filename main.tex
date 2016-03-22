@@ -53,6 +53,11 @@
 \setotherlanguage{english}
 \fi
 
+\ifdefined\FRENCH
+\setmainlanguage{french}
+\setotherlanguage{english}
+\fi
+
 \usepackage{microtype}
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -167,6 +172,7 @@
 \PTBRph{}%
 \DEph{}\PLph{}%
 \ITAph{}%
+\FR{La Rétro-Ingénierie pour les Débutants}%
 }
 \newcommand{\AUTHOR}{%
 \RU{Денис Юричев}%
@@ -175,6 +181,7 @@
 \PTBRph{}%
 \DEph{}\PLph{}%
 \ITAph{}%
+\FR{Dennis Yurichev}%
 }
 \newcommand{\EMAIL}{dennis(a)yurichev.com}
 
@@ -212,7 +219,8 @@
 \PTBR{\bibliography{C_book_en,books,articles,usenet,misc}}%
 \DE{\bibliography{C_book_en,books,articles,usenet,misc}}%
 \PL{\bibliography{C_book_en,books,articles,usenet,misc}}%
-\ITA{\bibliography{C_book_en,books,articles,usenet,misc}}
+\ITA{\bibliography{C_book_en,books,articles,usenet,misc}}%
+\FR{\bibliography{C_book_fr,books,articles,usenet,misc}}%
 
 \begin{document}
 
@@ -237,6 +245,7 @@
 	\PTBRph{}%
 	\DEph{}\PLph{}%
 	\ITAph{}%
+    \FR{Table des matières}%
 }{-1} % Only sections
 \fi
 \tableofcontents
@@ -273,6 +282,7 @@
 	\PTBRph{}%
 	\DEph{}\PLph{}%
 	\ITAph{}%
+	\FR{Glossaire}%
 }
 \printglossaries
 
@@ -289,6 +299,7 @@
 	\PTBRph{}%
 	\DEph{}\PLph{}%
 	\ITAph{}%
+    \FR{Bibliographie}%
 }
 \printbibliography
 

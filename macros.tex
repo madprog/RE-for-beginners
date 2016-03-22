@@ -39,16 +39,23 @@
 \newcommand*{\DE}[1]{}
 \fi
 
-\newcommand{\LANG}{\RU{ru}\EN{en}\ES{es}\PTBR{ptbr}\PL{pl}\ITA{it}\DE{de}}
+\ifdefined\FRENCH{}
+\newcommand*{\FR}[1]{\iflanguage{french}{#1}{}}
+\else
+\newcommand*{\FR}[1]{}
+\fi
+
+\newcommand{\LANG}{\RU{ru}\EN{en}\ES{es}\PTBR{ptbr}\PL{pl}\ITA{it}\DE{de}\FR{fr}}
 
 \newcommand{\ESph}{\ES{Spanish text placeholder}}
 \newcommand{\PTBRph}{\PTBR{Brazilian Portuguese text placeholder}}
 \newcommand{\PLph}{\PL{Polish text placeholder}}
 \newcommand{\ITAph}{\ITA{Italian text placeholder}}
 \newcommand{\DEph}{\DE{German text placeholder}}
+\newcommand{\FRph}{\FR{French text placeholder}}
 
 \newcommand*{\dittoclosing}{---''---}
-\newcommand*{\EMDASH}{\RU{~--- }\EN{---}\ESph{}\PTBRph{}\PLph{}\ITAph{}\DEph{}}
+\newcommand*{\EMDASH}{\RU{~--- }\EN{---}\ESph{}\PTBRph{}\PLph{}\ITAph{}\DEph{}\FR{~--- }}
 \newcommand*{\AsteriskOne}{${}^{*}$}
 \newcommand*{\AsteriskTwo}{${}^{**}$}
 \newcommand*{\AsteriskThree}{${}^{***}$}
@@ -67,6 +74,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{etc.}%
 }
 
 % http://tex.stackexchange.com/questions/32160/new-line-after-paragraph
@@ -80,6 +88,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{fig.}%
 \xspace}
 \newcommand{\figref}[1]{\figname{}\ref{#1}\xspace}
 \newcommand{\listingname}{%
@@ -90,6 +99,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{listing}%
 \xspace}
 \newcommand{\lstref}[1]{\listingname{}\ref{#1}\xspace}
 \newcommand{\bitENRU}{%
@@ -100,6 +110,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{bit}%
 \xspace}
 \newcommand{\bitsENRU}{%
 	\RU{бита}%
@@ -109,6 +120,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{bits}%
 \xspace}
 \newcommand{\Sourcecode}{%
 	\RU{Исходный код}%
@@ -118,6 +130,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{Code source}%
 \xspace}
 \newcommand{\Seealso}{%
 	\RU{См. также}%
@@ -127,6 +140,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{Voir aussi}%
 \xspace}
 \newcommand{\MacOSX}{Mac OS X\xspace}
 
@@ -141,6 +155,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{offset}%
 & \headercolor{}%
 	\RU{описание}%
 	\EN{description}%
@@ -149,6 +164,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{description}%
 }
 
 \newcommand{\IDA}{\ac{IDA}\xspace}
@@ -338,6 +354,7 @@
 	\PLph{}%
 	\ITAph{}%
 	\DEph{}%
+	\FR{décalage arithmétique}%
 }
 
 % x86 registers tables
@@ -374,6 +391,16 @@
 \PLph{}%
 \ITAph{}%
 \DEph{}%
+\FR{
+ 7\textsuperscript{e} \textsuperscript{numéro d'octet} &
+ 6\textsuperscript{e} &
+ 5\textsuperscript{e} &
+ 4\textsuperscript{e} &
+ 3\textsuperscript{e} &
+ 2\textsuperscript{e} &
+ 1\textsuperscript{er} &
+ 0\textsuperscript{e} &
+ }%
 }
 
 % FIXME навести порядок тут...

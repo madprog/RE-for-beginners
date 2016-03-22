@@ -1,4 +1,4 @@
-.SUFFIXES: .m4 .ru .en .es .ptbr .pl .it .de
+.SUFFIXES: .m4 .ru .en .es .ptbr .pl .it .de .fr
 .m4.en:
 	m4 --define=lang=en $*.m4 >$*.en
 .m4.ru:
@@ -13,6 +13,8 @@
 	m4 --define=lang=it $*.m4 >$*.it
 .m4.de:
 	m4 --define=lang=de $*.m4 >$*.de
+.m4.fr:
+	m4 --define=lang=fr $*.m4 >$*.fr
 
 M4SOURCES := $(shell find . $(pwd) -name '*.m4')
 RU_LISTINGS := $(M4SOURCES:%.m4=%.ru)
@@ -22,6 +24,7 @@ PL_LISTINGS := $(M4SOURCES:%.m4=%.pl)
 PTBR_LISTINGS := $(M4SOURCES:%.m4=%.ptbr)
 IT_LISTINGS := $(M4SOURCES:%.m4=%.it)
 DE_LISTINGS := $(M4SOURCES:%.m4=%.de)
+FR_LISTINGS := $(M4SOURCES:%.m4=%.fr)
 
 all:    RU EN RU-A5 EN-A5 RU-lite EN-lite RU-A5-lite EN-A5-lite
 
@@ -129,3 +132,14 @@ DE:	$(DE_LISTINGS)
 DE-lite: $(DE_LISTINGS)
 	$(call compile,RE4B-DE-lite)
 
+FR:	$(FR_LISTINGS)
+	$(call compile,RE4B-FR)
+
+FR-A5:	$(FR_LISTINGS)
+	$(call compile,RE4B-FR-A5)
+
+FR-lite: $(FR_LISTINGS)
+	$(call compile,RE4B-FR-lite)
+
+FR-A5-lite: $(FR_LISTINGS)
+	$(call compile,RE4B-FR-A5-lite)
